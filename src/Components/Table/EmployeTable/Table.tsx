@@ -1,13 +1,18 @@
 import React from 'react'
 import Row from './Row'
-import { EmployeModel } from '../../models'
+import FormEmploye from '../../Modal/FormEmploye'
+import { EmployeModel } from '../../../models'
+import './styles.css'
 
-interface TableProps{
+interface TableProps {
     data: EmployeModel[]
 }
-export default function Table({ data }:TableProps) {
-  return (
-    <div className="overflow-x-auto">
+export default function Table({ data }: TableProps) {
+    const wd: any = window
+
+    return (
+        <div className="overflow-x-auto">  
+            <button onClick={() => wd.my_modal_1.showModal()} className="btn btn-wide add-eply">Ajouter un employe</button><br />
             <table className="table">
                 <thead>
                     <tr>
@@ -23,7 +28,7 @@ export default function Table({ data }:TableProps) {
                     </tr>
                 </thead>
                 <tbody>
-                    { data.map((item, key)=> <Row key={key} item={item} />) }
+                    {data.map((item, key) => <Row key={key} item={item} />)}
                 </tbody>
                 <tfoot>
                     <tr>
@@ -36,6 +41,8 @@ export default function Table({ data }:TableProps) {
                 </tfoot>
 
             </table>
+
+            <FormEmploye />
         </div>
-  )
+    )
 }

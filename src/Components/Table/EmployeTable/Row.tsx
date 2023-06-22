@@ -1,5 +1,5 @@
 import React from 'react'
-import { EmployeModel } from '../../models'
+import { EmployeModel } from '../../../models'
 
 interface RowProps{
     item: EmployeModel
@@ -30,7 +30,6 @@ export default function Row({ item }: RowProps) {
                 <br />
                 <span className="badge badge-ghost badge-sm">{item.email}</span>
             </td>
-            <td>Purple</td>
             <th>
                 <button className="btn btn-ghost btn-xs">{item.salary}</button>
             </th>

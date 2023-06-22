@@ -9,3 +9,10 @@ export type EmployeModel = {
     salary: number
     commission_pct: null
 }
+
+export type JobModel = {
+    job_id: string
+    job_title: string
+    min_salary: number
+    max_salary: number
+}

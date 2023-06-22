@@ -1,7 +1,7 @@
 import React from 'react'
 import Main from '../Components/Main'
 import Loading from '../Components/Loading'
-import { Table } from '../Components/Table'
+import { Table } from '../Components/Table/EmployeTable'
 import { useGetEmployeQuery } from '../services/api/Employe/EmployeApi'
 import { showToastError } from '../services/toast'
 
