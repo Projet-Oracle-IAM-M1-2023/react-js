@@ -1,6 +1,6 @@
 const urls = {
   dev: "https://fakeurl.com",
-  local: "https://localhost:8080",
+  local: "http://localhost:8080",
 };
 
 const BASE_URL = urls.local;
