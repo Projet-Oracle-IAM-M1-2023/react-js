@@ -25,7 +25,7 @@ export default function Row({ item, setItem }: RowProps) {
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
-                            <HiUserCircle />
+                            <HiUserCircle size={25} />
                         </div>
                     </div>
                     <div>
