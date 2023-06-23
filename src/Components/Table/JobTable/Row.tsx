@@ -1,4 +1,5 @@
 import React from 'react'
+import { MdOutlineWork } from 'react-icons/md'
 import { JobModel } from '../../../models'
 
 interface RowProps{
@@ -16,7 +17,7 @@ export default function Row({ item }: RowProps) {
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
-                            <img src="/logo.png" alt="Avatar Tailwind CSS Component" />
+                            <MdOutlineWork size={50} />
                         </div>
                     </div>
                     <div>
