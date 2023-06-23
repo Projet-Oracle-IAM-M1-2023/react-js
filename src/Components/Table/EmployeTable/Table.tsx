@@ -14,7 +14,7 @@ export default function Table({ data }: TableProps) {
 
     return (
         <div className="overflow-x-auto">  
-        <FormEmploye editData={item}/>
+        <FormEmploye editData={item} setItem={setItem} />
             <button onClick={() => wd.my_modal_1.showModal()} className="btn btn-wide add-eply">Ajouter un employe</button><br />
             <table className="table">
                 <thead>

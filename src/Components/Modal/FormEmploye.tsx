@@ -26,6 +26,7 @@ const schema = yup.object().shape({
 
 interface FormEmployeProps {
     editData: EmployeModel | null
+    setItem: React.Dispatch<React.SetStateAction<EmployeModel | null>>
 }
 
 const DataToSelect = (data: JobModel[] | undefined): SelectType[] => {
@@ -38,7 +39,7 @@ const DataToSelect = (data: JobModel[] | undefined): SelectType[] => {
     return new_arr
 }
 
-export default function FormEmploye({ editData }: FormEmployeProps) {
+export default function FormEmploye({ editData, setItem }: FormEmployeProps) {
     const wd: any = window
 
     const [addEmploye] = useAddEmployeMutation()
@@ -55,14 +56,19 @@ export default function FormEmploye({ editData }: FormEmployeProps) {
 
         editData ?
             editEmploye(data).unwrap()
-                .then(res => showToastSucces('Le job a été ajouté'))
-                .catch(err => showToastError('Erreur lors de l`ajout'))
+                .then(res => showToastSucces('L`employe a été modifié'))
+                .catch(err => showToastError('Erreur lors de la modification'))
             :
             addEmploye(data).unwrap()
-                .then(res => showToastSucces('Le job a été ajouté'))
-                .catch(err => showToastError('Erreur lors de l`ajout'))
+                .then(res => showToastSucces('L`employe a été modifié'))
+                .catch(err => showToastError('Erreur lors de la modification'))
     }
 
+
+    const onCloseModal = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
+        wd.my_modal_1.close()
+        setItem(null)
+    }
 
     return (
         <div>
@@ -137,10 +143,10 @@ export default function FormEmploye({ editData }: FormEmployeProps) {
 
                     <br /><br />
                     <button type="submit" className="btn btn-outline btn-accent">
-                        Ajouter
+                        {editData ? 'Modifier' : 'Ajouter'}
                     </button>
                     <div className="modal-action">
-                        <button onClick={() => wd.my_modal_1.close()} className="btn">Fermer</button>
+                        <button onClick={onCloseModal} className="btn">Fermer</button>
                     </div>
                 </form>
             </dialog>
