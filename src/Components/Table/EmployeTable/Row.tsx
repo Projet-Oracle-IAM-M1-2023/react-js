@@ -1,6 +1,5 @@
 import React from 'react'
 import { EmployeModel } from '../../../models'
-import FormEmploye from '../../Modal/FormEmploye'
 
 interface RowProps{
     item: EmployeModel
@@ -41,8 +40,6 @@ export default function Row({ item }: RowProps) {
             </th>
 
             <th><button onClick={() => wd.my_modal_1.showModal()} className="btn btn-ghost btn-xs">modifier</button></th>
-
-            <FormEmploye editData={item} />
         </tr>
     )
 }

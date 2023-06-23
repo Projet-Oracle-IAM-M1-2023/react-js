@@ -12,6 +12,7 @@ export default function Table({ data }: TableProps) {
 
     return (
         <div className="overflow-x-auto">  
+        <FormJob />
             <button onClick={() => wd.my_modal_2.showModal()} className="btn btn-wide add-eply">Ajouter un job</button><br />
             <table className="table">
                 <thead>
@@ -40,7 +41,7 @@ export default function Table({ data }: TableProps) {
 
             </table>
 
-            <FormJob />
+            
         </div>
     )
 }
