@@ -25,7 +25,7 @@ const schema = yup.object().shape({
 }).required();
 
 interface FormEmployeProps {
-    editData?: EmployeModel
+    editData: EmployeModel | null
 }
 
 const DataToSelect = (data: JobModel[] | undefined): SelectType[] => {

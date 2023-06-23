@@ -2,10 +2,16 @@ import React from 'react'
 import { EmployeModel } from '../../../models'
 
 interface RowProps{
-    item: EmployeModel
+    item: EmployeModel,
+    setItem: React.Dispatch<React.SetStateAction<EmployeModel | null>>
 }
-export default function Row({ item }: RowProps) {
+export default function Row({ item, setItem }: RowProps) {
     const wd: any = window
+
+    const onModify = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+        wd.my_modal_1.showModal()
+        setItem(item)
+    }
 
     return (
         <tr>
@@ -39,7 +45,7 @@ export default function Row({ item }: RowProps) {
                 <button className="btn btn-ghost btn-xs">{item.hire_date}</button>
             </th>
 
-            <th><button onClick={() => wd.my_modal_1.showModal()} className="btn btn-ghost btn-xs">modifier</button></th>
+            <th><button onClick={onModify} className="btn btn-ghost btn-xs">modifier</button></th>
         </tr>
     )
 }
