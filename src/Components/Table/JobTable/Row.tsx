@@ -17,7 +17,7 @@ export default function Row({ item }: RowProps) {
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
-                            <MdOutlineWork size={50} />
+                            <MdOutlineWork size={35} />
                         </div>
                     </div>
                     <div>
