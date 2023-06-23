@@ -1,4 +1,5 @@
 import React from 'react'
+import { HiUserCircle } from 'react-icons/hi'
 import { EmployeModel } from '../../../models'
 
 interface RowProps{
@@ -24,7 +25,7 @@ export default function Row({ item, setItem }: RowProps) {
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
-                            <img src="/logo.png" alt="Avatar Tailwind CSS Component" />
+                            <HiUserCircle />
                         </div>
                     </div>
                     <div>
