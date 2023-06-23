@@ -94,7 +94,7 @@ export default function FormEmploye({ editData }: FormEmployeProps) {
                             register={register}
                             label={'Email'}
                             placeholder={'oui@oracle.com'}
-                            type={'number'}
+                            type={'text'}
                             name={'email'}
                         />
                         <Field
