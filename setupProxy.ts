@@ -1,11 +1,17 @@
-import { createProxyMiddleware } from 'http-proxy-middleware';
-import { RequestHandler } from 'express';
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
-const proxyOptions: RequestHandler = createProxyMiddleware({
-  target: 'http://localhost:8080',
-  changeOrigin: true,
-});
-
-module.exports = function (app: any) {
-  app.use('/', proxyOptions);
+module.exports = function (app) {
+  app.use(
+    '/',
+    createProxyMiddleware({
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+      // Add any additional headers if required
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      },
+    })
+  );
 };
