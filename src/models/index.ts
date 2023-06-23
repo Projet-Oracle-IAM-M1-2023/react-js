@@ -7,7 +7,7 @@ export type EmployeModel = {
     hire_date: string
     job_id: string
     salary: number
-    commission_pct: null
+    commission_pct?: null 
 }
 
 export type JobModel = {

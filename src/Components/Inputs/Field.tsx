@@ -1,5 +1,6 @@
 import React from 'react'
 import { FieldError, UseFormRegister } from 'react-hook-form'
+import './styles.css'
 
 interface FieldProps{
     label: string
@@ -11,7 +12,7 @@ interface FieldProps{
     error: FieldError | undefined,
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => any,
 }
-export default function Field({ label, placeholder, type, defaultValue, register, name, error, onChange }: FieldProps) {
+export default function Field({ label, placeholder, type, defaultValue, register, name, error }: FieldProps) {
     return (
         <div className="form-control w-full max-w-xs">
             <label className="label">
@@ -20,7 +21,6 @@ export default function Field({ label, placeholder, type, defaultValue, register
             <input 
                 {...register(name)}
                 defaultValue={defaultValue}
-                onChange={onChange}
                 type={type}
                 placeholder={placeholder} 
                 className="input input-bordered w-full max-w-xs" 

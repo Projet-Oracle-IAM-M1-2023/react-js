@@ -31,6 +31,8 @@ export default function Row({ item }: RowProps) {
             <th>
                 <button className="btn btn-ghost btn-xs">{item.min_salary}</button>
             </th>
+
+            <th><button className="btn btn-ghost btn-xs">modifier</button></th>
         </tr>
     )
 }

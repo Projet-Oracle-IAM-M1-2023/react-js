@@ -1,8 +1,8 @@
 import React from 'react'
 import Row from './Row'
-import FormEmploye from '../../Modal/FormEmploye'
 import { JobModel } from '../../../models'
 import './styles.css'
+import FormJob from '../../Modal/FormJob'
 
 interface TableProps {
     data: JobModel[]
@@ -12,7 +12,7 @@ export default function Table({ data }: TableProps) {
 
     return (
         <div className="overflow-x-auto">  
-            <button onClick={() => wd.my_modal_1.showModal()} className="btn btn-wide add-eply">Ajouter un employe</button><br />
+            <button onClick={() => wd.my_modal_2.showModal()} className="btn btn-wide add-eply">Ajouter un job</button><br />
             <table className="table">
                 <thead>
                     <tr>
@@ -40,7 +40,7 @@ export default function Table({ data }: TableProps) {
 
             </table>
 
-            <FormEmploye />
+            <FormJob />
         </div>
     )
 }
